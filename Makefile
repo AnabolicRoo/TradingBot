@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-EXECUTABLE_NAME := template
+EXECUTABLE_NAME := trade
 
 CMAKE_GEN_FLAGS :=
 CMAKE_BUILD_FLAGS :=
@@ -35,6 +35,8 @@ clean:
 fclean: clean
 	@find . -name $(EXECUTABLE_NAME) -delete
 	@find . -name test_bin -delete
+
+re:	fclean all
 
 tests_run: fclean
 	@gcc -o test_bin $(TESTS_SRC) $(SRCS) --coverage -lcriterion $(CDEBUGFLAGS)
