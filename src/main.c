@@ -4,11 +4,16 @@
 ** File description:
 ** Main file
 */
+#include "chart.h"
 
-#include <stdio.h>
-
-int main(int argc, char *argv[])
+int main(void)
 {
-    printf("Hello World\n");
+    settings_t settings = {};
+    chart_t *chart;
+
+    if (get_settings(&settings) == 1)
+        return 84;
+    chart = create_chart(&settings);
+    destroy_chart(chart);
     return 0;
 }
