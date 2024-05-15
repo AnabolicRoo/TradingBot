@@ -27,7 +27,6 @@ typedef struct settings_s {
 #define SETTINGS "settings"
 
 // Settings.
-#define SETTING_OFFSET sizeof(SETTINGS) + 1
 #define PLAYER_NAMES "player_names"
 #define BOT_NAME "your_bot"
 #define TIMEBANK "timebank"

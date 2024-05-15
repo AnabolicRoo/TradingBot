@@ -36,6 +36,8 @@ add_executable(${TARGET_NAME}
         src/input.c
         src/array.c
         src/balance.c
+        src/trade.c
+        src/loader.c
 )
 
 target_include_directories(${TARGET_NAME} PRIVATE
