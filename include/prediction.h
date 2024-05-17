@@ -19,5 +19,5 @@ typedef enum signal_s {
 
 typedef struct prediction_s {
     signal_t signal;
-    double strength;
+    double strength; // [0; 1]
 } prediction_t;

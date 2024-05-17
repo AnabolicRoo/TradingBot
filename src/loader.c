@@ -38,7 +38,7 @@ void loop_on_files(DIR *dp, plugins_t *plugins, uint64_t *i)
 
     while (entry) {
         if (strncmp(entry->d_name, PLUGIN_ALIAS, MACRO_SIZE(PLUGIN_ALIAS)) ==
-            0) {
+        0) {
             filename_len = strlen(entry->d_name);
             memcpy(path + MACRO_SIZE(PLUGIN_PATH), entry->d_name,
             filename_len);
@@ -60,8 +60,12 @@ uint8_t load_plugins(plugins_t *plugins)
 
     if (count == 0 || dp == NULL)
         return 1;
-    plugins->functions = malloc(sizeof(void *) * count);
+    plugins->functions = malloc(sizeof(plugin_entry_point_t *) * count);
+    if (plugins->functions == NULL)
+        return 1;
     plugins->dyn_objs = malloc(sizeof(void *) * count);
+    if (plugins->dyn_objs == NULL)
+        return 1;
     loop_on_files(dp, plugins, &i);
     plugins->len = i;
     closedir(dp);

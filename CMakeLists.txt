@@ -35,13 +35,16 @@ add_executable(${TARGET_NAME}
         src/settings_utils.c
         src/input.c
         src/array.c
-        src/balance.c
+        src/wallet.c
         src/trade.c
         src/loader.c
+        src/context.c
+        src/decision.c
 )
 
 target_include_directories(${TARGET_NAME} PRIVATE
         include
+        tests/trade_includes
 )
 
 target_link_libraries(${TARGET_NAME} PRIVATE

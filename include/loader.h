@@ -11,7 +11,7 @@
 
 #include "plugin.h"
 
-#define PLUGIN_PATH "plugins/"
+#define PLUGIN_PATH "tests/plugins/"
 #define PLUGIN_ALIAS "trade_plugin_"
 #define PLUGIN_FUNCTION_NAME "plugin_entry_point"
 #define PLUGIN_MAX_NAME_LEN 50

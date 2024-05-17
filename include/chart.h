@@ -15,6 +15,7 @@
 
 typedef struct chart_s {
     char pair[10];
+    uint64_t index;
     uint64_t len;
     double fees;
     double *date;
