@@ -6,7 +6,6 @@
 */
 #include <stdint.h>
 #include <string.h>
-#include <unistd.h>
 
 #include "context.h"
 
@@ -14,7 +13,6 @@ void add_to_contexts(context_t *arr, const context_data_t *element)
 {
     arr->contexts[arr->tail] = *element;
     arr->tail = (arr->tail + 1) % arr->len;
-    write(2, "ADDED TO CONTEXT\n", 17);
 }
 
 void copy_contexts_ordered(const context_t *src, context_t *dest,

@@ -15,14 +15,14 @@
 void apply_settings_to_chart(chart_t *chart, const settings_t *settings)
 {
     memcpy(chart->pair, PAIR, sizeof(PAIR));
-    chart->len = settings->candles_total;
+    chart->len = settings->candles_total + 1;
     chart->fees = settings->transaction_fees_prct / 100;
     chart->index = 0;
 }
 
 chart_t *create_chart(const settings_t *settings)
 {
-    uint64_t len = settings->candles_total;
+    uint64_t len = settings->candles_total + 1;
     chart_t *chart = malloc(sizeof(chart_t));
 
     apply_settings_to_chart(chart, settings);
