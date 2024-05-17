@@ -12,7 +12,7 @@ add_library(build_configs INTERFACE)
 
 target_compile_options(build_configs INTERFACE
         $<$<CONFIG:DEBUG>:-g3>
-        $<$<CONFIG:RELEASE>:-Ofast>
+        $<$<CONFIG:RELEASE>:-O3>
         -march=native
         -flto=auto
 )
@@ -31,10 +31,20 @@ target_link_options(build_configs INTERFACE
 
 add_executable(${TARGET_NAME}
         src/main.c
+        src/chart.c
+        src/settings_utils.c
+        src/input.c
+        src/array.c
+        src/wallet.c
+        src/trade.c
+        src/loader.c
+        src/context.c
+        src/decision.c
 )
 
 target_include_directories(${TARGET_NAME} PRIVATE
         include
+        tests/trade_includes
 )
 
 target_link_libraries(${TARGET_NAME} PRIVATE
