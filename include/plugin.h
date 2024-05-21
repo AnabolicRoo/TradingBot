@@ -11,6 +11,7 @@
 
 #include "prediction.h"
 #include "chart.h"
+#include "array_tricks.h"
 
 #define PACKED __attribute__ ((packed))
 
