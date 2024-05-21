@@ -38,7 +38,7 @@ void add_to_contexts(context_t *arr, const context_data_t *element);
 /// @param src The context array.
 /// @param dest The destination array.
 /// @param offset The offset (0 by default).
-void copy_contexts_ordered(const context_t *src, context_t *dest,
+uint64_t copy_contexts_ordered(const context_t *src, context_data_t *dest,
     uint64_t offset);
 
 /// Get the last context data.

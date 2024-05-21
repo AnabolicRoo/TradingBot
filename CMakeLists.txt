@@ -40,6 +40,7 @@ add_executable(${TARGET_NAME}
         src/loader.c
         src/context.c
         src/decision.c
+        src/array_tricks.c
 )
 
 target_include_directories(${TARGET_NAME} PRIVATE
