@@ -63,4 +63,3 @@ dkms.conf
 /trade
 cmake-build-*
 build*
-/plugin_dev
